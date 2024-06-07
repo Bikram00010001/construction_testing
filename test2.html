@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>/* CSS */
+    nav {
+      background-color: #333;
+      color: #fff;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+    
+    .logo a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    
+    .nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none; /* Initially hide the menu */
+}
+
+.nav-menu.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 50%;
+  background-color: #333;
+  z-index: 1;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+    
+    .nav-menu li {
+      display: inline-block;
+      margin-left: 20px;
+    }
+    
+    .nav-menu li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .nav-menu li a:hover {
+      color: #ff6600; /* Colorful hover effect */
+    }
+    
+    .menu-toggle {
+      display: block;
+      cursor: pointer;
+    }
+    
+    .menu-toggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin-bottom: 5px;
+      background-color: #fff;
+    }
+    
+    @media (min-width: 768px) {
+      .nav-menu {
+        display: flex;
+      }
+      .menu-toggle {
+        display: none;
+      }
+    }</style>
+<body>
+    <!-- HTML -->
+<nav>
+    <div class="nav-container">
+      <div class="logo">
+        <a href="#">Logo</a>
+      </div>
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu"id="nav-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+     
+    </div>
+  </nav>
+  <script>
+   
+   const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu'); // Changed selector to target the class
+  
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+  </script>
+  
+  
+</body>
+</html>
